@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost:3000">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <link rel="stylesheet" href="styles.css">
     <title>Hello from Electron renderer!</title>
@@ -12,12 +12,12 @@
 <body>
     <h1 class="app-title">Hello from Electron renderer! 👋</h1>
     <div class="btn-container">
-        <button id="addButton" class="btn">Ajouter un élément</button>
+        <button id="addButton" class="btn" onclick="addPizza()">Ajouter une pizza</button>
     </div>
-    <ul id="list">List des éléments</ul>
+    <ul id="list">List des Pizzas</ul> <!-- Ajout de l'élément pour afficher la liste des éléments -->
     <div id="popup" class="popup">
         <div class="popup-content">
-            <h2 id="popupTitle">Ajouter un élément</h2>
+            <h2 id="popupTitle">Ajouter une pizza</h2>
             <label for="pizzaInput">Pizza:</label>
             <input type="text" id="pizzaInput">
             <label for="ingredientsInput">Ingrédients:</label>
