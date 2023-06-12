@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron . -v --log-level=3",
+    "start": "npx electromon . -v --log-level=3",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

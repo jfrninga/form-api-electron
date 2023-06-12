@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link rel="stylesheet" href="styles.css">
     <title>Hello from Electron renderer!</title>
-  </head>
-  <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-    <p id="info"></p>
-  </body>
-  <script src="./renderer.js"></script>
+</head>
+
+<body>
+    <h1 class="app-title">Hello from Electron renderer! 👋</h1>
+    <div class="btn-container">
+        <button id="addButton" class="btn">Ajouter un élément</button>
+    </div>
+    <ul id="list">List des éléments</ul>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2 id="popupTitle">Ajouter un élément</h2>
+            <label for="pizzaInput">Pizza:</label>
+            <input type="text" id="pizzaInput">
+            <label for="ingredientsInput">Ingrédients:</label>
+            <input type="text" id="ingredientsInput">
+            <label for="prixInput">Prix:</label>
+            <input type="text" id="prixInput">
+            <button id="popupSaveButton" class="btn-valid">Enregistrer</i></button>
+            <button id="popupCancelButton" class="btn-cancel">Annuler</button>
+        </div>
+    </div>
+
+    <h2 class="donut-title"> Donuts </h2>
+    <div class="container">
+        <div class="donut-chart-block block">
+            <div class="donut-chart">
+                <div id="part1" class="portion-block">
+                    <div class="circle"></div>
+                </div>
+                <div id="part2" class="portion-block">
+                    <div class="circle"></div>
+                </div>
+                <div id="part3" class="portion-block">
+                    <div class="circle"></div>
+                </div>
+                <p class="center"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="render.js"></script>
+</body>
+
 </html>
