@@ -50,11 +50,19 @@ async function addItem(pizza, ingredients, prix) {
     prix,
   };
 
+  // Check if the pizza already exists in the data array
+  const pizzaExists = data.some((existingPizza) => existingPizza.pizza === pizza);
+  if (pizzaExists) {
+    alert("Cette pizza existe déjà !");
+    return; // Stop execution if the pizza already exists
+  }
+
   try {
     const response = await fetch("http://localhost:3000/pizza", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Cache-Control": "no-cache",
       },
       body: JSON.stringify(item),
     });
